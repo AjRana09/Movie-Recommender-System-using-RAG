@@ -1,0 +1,502 @@
+MOVIE RECOMMENDATIONS DATA
+==========================
+
+User ID: U1000
+Preferred Genre: Action
+Recommended Movie: John Wick
+Reason: Recommended because you like Action movies.
+
+User ID: U1001
+Preferred Genre: Action
+Recommended Movie: Die Hard
+Reason: Recommended because you like Action movies.
+
+User ID: U1002
+Preferred Genre: Romance
+Recommended Movie: Pride & Prejudice
+Reason: Recommended because you like Romance movies.
+
+User ID: U1003
+Preferred Genre: Comedy
+Recommended Movie: Superbad
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1004
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1005
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1006
+Preferred Genre: Drama
+Recommended Movie: Forrest Gump
+Reason: Recommended because you like Drama movies.
+
+User ID: U1007
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1008
+Preferred Genre: Sci-Fi
+Recommended Movie: Inception
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1009
+Preferred Genre: Comedy
+Recommended Movie: Step Brothers
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1010
+Preferred Genre: Horror
+Recommended Movie: The Conjuring
+Reason: Recommended because you like Horror movies.
+
+User ID: U1011
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1012
+Preferred Genre: Horror
+Recommended Movie: It
+Reason: Recommended because you like Horror movies.
+
+User ID: U1013
+Preferred Genre: Action
+Recommended Movie: The Dark Knight
+Reason: Recommended because you like Action movies.
+
+User ID: U1014
+Preferred Genre: Action
+Recommended Movie: John Wick
+Reason: Recommended because you like Action movies.
+
+User ID: U1015
+Preferred Genre: Romance
+Recommended Movie: Before Sunrise
+Reason: Recommended because you like Romance movies.
+
+User ID: U1016
+Preferred Genre: Comedy
+Recommended Movie: Bridesmaids
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1017
+Preferred Genre: Romance
+Recommended Movie: Before Sunrise
+Reason: Recommended because you like Romance movies.
+
+User ID: U1018
+Preferred Genre: Sci-Fi
+Recommended Movie: Inception
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1019
+Preferred Genre: Horror
+Recommended Movie: Hereditary
+Reason: Recommended because you like Horror movies.
+
+User ID: U1020
+Preferred Genre: Drama
+Recommended Movie: The Shawshank Redemption
+Reason: Recommended because you like Drama movies.
+
+User ID: U1021
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1022
+Preferred Genre: Comedy
+Recommended Movie: Superbad
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1023
+Preferred Genre: Action
+Recommended Movie: Die Hard
+Reason: Recommended because you like Action movies.
+
+User ID: U1024
+Preferred Genre: Comedy
+Recommended Movie: Anchorman
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1025
+Preferred Genre: Sci-Fi
+Recommended Movie: Arrival
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1026
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1027
+Preferred Genre: Action
+Recommended Movie: Gladiator
+Reason: Recommended because you like Action movies.
+
+User ID: U1028
+Preferred Genre: Sci-Fi
+Recommended Movie: Blade Runner 2049
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1029
+Preferred Genre: Sci-Fi
+Recommended Movie: The Matrix
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1030
+Preferred Genre: Sci-Fi
+Recommended Movie: Interstellar
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1031
+Preferred Genre: Romance
+Recommended Movie: The Notebook
+Reason: Recommended because you like Romance movies.
+
+User ID: U1032
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1033
+Preferred Genre: Action
+Recommended Movie: Gladiator
+Reason: Recommended because you like Action movies.
+
+User ID: U1034
+Preferred Genre: Horror
+Recommended Movie: It
+Reason: Recommended because you like Horror movies.
+
+User ID: U1035
+Preferred Genre: Horror
+Recommended Movie: Get Out
+Reason: Recommended because you like Horror movies.
+
+User ID: U1036
+Preferred Genre: Drama
+Recommended Movie: 12 Years a Slave
+Reason: Recommended because you like Drama movies.
+
+User ID: U1037
+Preferred Genre: Romance
+Recommended Movie: The Notebook
+Reason: Recommended because you like Romance movies.
+
+User ID: U1038
+Preferred Genre: Horror
+Recommended Movie: It
+Reason: Recommended because you like Horror movies.
+
+User ID: U1039
+Preferred Genre: Comedy
+Recommended Movie: Bridesmaids
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1040
+Preferred Genre: Action
+Recommended Movie: The Dark Knight
+Reason: Recommended because you like Action movies.
+
+User ID: U1041
+Preferred Genre: Drama
+Recommended Movie: The Shawshank Redemption
+Reason: Recommended because you like Drama movies.
+
+User ID: U1042
+Preferred Genre: Sci-Fi
+Recommended Movie: Arrival
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1043
+Preferred Genre: Horror
+Recommended Movie: Get Out
+Reason: Recommended because you like Horror movies.
+
+User ID: U1044
+Preferred Genre: Romance
+Recommended Movie: Pride & Prejudice
+Reason: Recommended because you like Romance movies.
+
+User ID: U1045
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1046
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1047
+Preferred Genre: Action
+Recommended Movie: John Wick
+Reason: Recommended because you like Action movies.
+
+User ID: U1048
+Preferred Genre: Comedy
+Recommended Movie: Step Brothers
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1049
+Preferred Genre: Sci-Fi
+Recommended Movie: Blade Runner 2049
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1050
+Preferred Genre: Drama
+Recommended Movie: The Shawshank Redemption
+Reason: Recommended because you like Drama movies.
+
+User ID: U1051
+Preferred Genre: Horror
+Recommended Movie: A Quiet Place
+Reason: Recommended because you like Horror movies.
+
+User ID: U1052
+Preferred Genre: Romance
+Recommended Movie: Before Sunrise
+Reason: Recommended because you like Romance movies.
+
+User ID: U1053
+Preferred Genre: Romance
+Recommended Movie: The Notebook
+Reason: Recommended because you like Romance movies.
+
+User ID: U1054
+Preferred Genre: Action
+Recommended Movie: John Wick
+Reason: Recommended because you like Action movies.
+
+User ID: U1055
+Preferred Genre: Comedy
+Recommended Movie: Superbad
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1056
+Preferred Genre: Horror
+Recommended Movie: It
+Reason: Recommended because you like Horror movies.
+
+User ID: U1057
+Preferred Genre: Horror
+Recommended Movie: The Conjuring
+Reason: Recommended because you like Horror movies.
+
+User ID: U1058
+Preferred Genre: Action
+Recommended Movie: Gladiator
+Reason: Recommended because you like Action movies.
+
+User ID: U1059
+Preferred Genre: Comedy
+Recommended Movie: Bridesmaids
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1060
+Preferred Genre: Romance
+Recommended Movie: Before Sunrise
+Reason: Recommended because you like Romance movies.
+
+User ID: U1061
+Preferred Genre: Action
+Recommended Movie: Die Hard
+Reason: Recommended because you like Action movies.
+
+User ID: U1062
+Preferred Genre: Sci-Fi
+Recommended Movie: Arrival
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1063
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
+
+User ID: U1064
+Preferred Genre: Horror
+Recommended Movie: Get Out
+Reason: Recommended because you like Horror movies.
+
+User ID: U1065
+Preferred Genre: Action
+Recommended Movie: Gladiator
+Reason: Recommended because you like Action movies.
+
+User ID: U1066
+Preferred Genre: Drama
+Recommended Movie: 12 Years a Slave
+Reason: Recommended because you like Drama movies.
+
+User ID: U1067
+Preferred Genre: Action
+Recommended Movie: John Wick
+Reason: Recommended because you like Action movies.
+
+User ID: U1068
+Preferred Genre: Comedy
+Recommended Movie: Superbad
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1069
+Preferred Genre: Action
+Recommended Movie: The Dark Knight
+Reason: Recommended because you like Action movies.
+
+User ID: U1070
+Preferred Genre: Romance
+Recommended Movie: The Notebook
+Reason: Recommended because you like Romance movies.
+
+User ID: U1071
+Preferred Genre: Action
+Recommended Movie: The Dark Knight
+Reason: Recommended because you like Action movies.
+
+User ID: U1072
+Preferred Genre: Action
+Recommended Movie: Die Hard
+Reason: Recommended because you like Action movies.
+
+User ID: U1073
+Preferred Genre: Comedy
+Recommended Movie: Step Brothers
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1074
+Preferred Genre: Comedy
+Recommended Movie: The Hangover
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1075
+Preferred Genre: Sci-Fi
+Recommended Movie: The Matrix
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1076
+Preferred Genre: Sci-Fi
+Recommended Movie: The Matrix
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1077
+Preferred Genre: Drama
+Recommended Movie: 12 Years a Slave
+Reason: Recommended because you like Drama movies.
+
+User ID: U1078
+Preferred Genre: Comedy
+Recommended Movie: Anchorman
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1079
+Preferred Genre: Horror
+Recommended Movie: A Quiet Place
+Reason: Recommended because you like Horror movies.
+
+User ID: U1080
+Preferred Genre: Horror
+Recommended Movie: Hereditary
+Reason: Recommended because you like Horror movies.
+
+User ID: U1081
+Preferred Genre: Comedy
+Recommended Movie: Bridesmaids
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1082
+Preferred Genre: Romance
+Recommended Movie: The Notebook
+Reason: Recommended because you like Romance movies.
+
+User ID: U1083
+Preferred Genre: Comedy
+Recommended Movie: Superbad
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1084
+Preferred Genre: Romance
+Recommended Movie: La La Land
+Reason: Recommended because you like Romance movies.
+
+User ID: U1085
+Preferred Genre: Sci-Fi
+Recommended Movie: Arrival
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1086
+Preferred Genre: Romance
+Recommended Movie: La La Land
+Reason: Recommended because you like Romance movies.
+
+User ID: U1087
+Preferred Genre: Comedy
+Recommended Movie: Step Brothers
+Reason: Recommended because you like Comedy movies.
+
+User ID: U1088
+Preferred Genre: Sci-Fi
+Recommended Movie: Interstellar
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1089
+Preferred Genre: Sci-Fi
+Recommended Movie: The Matrix
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1090
+Preferred Genre: Drama
+Recommended Movie: The Shawshank Redemption
+Reason: Recommended because you like Drama movies.
+
+User ID: U1091
+Preferred Genre: Sci-Fi
+Recommended Movie: Arrival
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1092
+Preferred Genre: Drama
+Recommended Movie: Fight Club
+Reason: Recommended because you like Drama movies.
+
+User ID: U1093
+Preferred Genre: Horror
+Recommended Movie: The Conjuring
+Reason: Recommended because you like Horror movies.
+
+User ID: U1094
+Preferred Genre: Sci-Fi
+Recommended Movie: Inception
+Reason: Recommended because you like Sci-Fi movies.
+
+User ID: U1095
+Preferred Genre: Horror
+Recommended Movie: It
+Reason: Recommended because you like Horror movies.
+
+User ID: U1096
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1097
+Preferred Genre: Action
+Recommended Movie: Die Hard
+Reason: Recommended because you like Action movies.
+
+User ID: U1098
+Preferred Genre: Romance
+Recommended Movie: Titanic
+Reason: Recommended because you like Romance movies.
+
+User ID: U1099
+Preferred Genre: Action
+Recommended Movie: Mad Max: Fury Road
+Reason: Recommended because you like Action movies.
