@@ -1,0 +1,330 @@
+{
+  "name": "Movie Recommendations",
+  "nodes": [
+    {
+      "parameters": {
+        "mode": "insert",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "ajay123",
+          "mode": "list",
+          "cachedResultName": "ajay123"
+        },
+        "embeddingBatchSize": 10,
+        "options": {
+          "pineconeNamespace": "ajay"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.2,
+      "position": [
+        220,
+        0
+      ],
+      "id": "95996eee-5e4e-4acd-a5f9-b4da61cfed09",
+      "name": "Pinecone Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "f74WisRbKxj5ELIl",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        280,
+        220
+      ],
+      "id": "9734816d-3f7e-49d3-a5f1-3486c772b674",
+      "name": "Embeddings Google Gemini",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WqAbcTBl6ijy3a52",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "dataType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "typeVersion": 1,
+      "position": [
+        460,
+        220
+      ],
+      "id": "df934c71-9d5f-469d-82da-157b3c14bfb5",
+      "name": "Default Data Loader"
+    },
+    {
+      "parameters": {
+        "chunkSize": 400,
+        "chunkOverlap": 10,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter",
+      "typeVersion": 1,
+      "position": [
+        560,
+        440
+      ],
+      "id": "076fb966-4117-4a45-918b-7b2882becba2",
+      "name": "Recursive Character Text Splitter"
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "simple": false,
+        "filters": {},
+        "options": {
+          "downloadAttachments": true
+        }
+      },
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        20,
+        0
+      ],
+      "id": "6c73fd9b-7e84-4e54-9c4f-bb04ee2fc411",
+      "name": "Gmail Trigger",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "6Sq96Z1XIGEA4H60",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        960,
+        20
+      ],
+      "id": "8cc0bc76-a4b6-42c7-b594-2806159d3c05",
+      "name": "When chat message received",
+      "webhookId": "dbe98744-da99-414b-b1a3-6b8f3c668a7b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=read the following input given by the user \"{{ $json.chatInput }}\" and answer to the query\n\n\n\ncontext: the vector store that is connected to you i.e., \"movie_recommendations\" stores data about movie recommendations based on user preferences and genres, so when searching the vector store based on the chatinput \"{{ $json.chatInput }}\" change the query that is given to the vector store to relevant keywords that are related to movies, genres, recommendations, and user preferences specifically for movie suggestions",
+        "options": {
+          "systemMessage": "You are a movie recommendation AI assistant in a RAG application. You help users find movies based on their preferences, genres, and past recommendations. You can suggest movies, explain why certain movies are recommended, and help users discover new films based on their taste."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        1260,
+        20
+      ],
+      "id": "f9d3992e-5e62-40fb-889a-660a25cc8f94",
+      "name": "Movie Recommendation AI Agent"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "movie_recommendations",
+        "toolDescription": "Retrieve relevant movie recommendation documents and provide them to the AI agent for generating personalized movie suggestions",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "ajay123",
+          "mode": "list",
+          "cachedResultName": "ajay123"
+        },
+        "topK": 10,
+        "options": {
+          "pineconeNamespace": "ajay"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        1660,
+        140
+      ],
+      "id": "d26a776b-7566-4b3b-98dc-524b7893b892",
+      "name": "Movie Recommendations Vector Store",
+      "credentials": {
+        "pineconeApi": {
+          "id": "f74WisRbKxj5ELIl",
+          "name": "PineconeApi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-2.0-flash-001",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1260,
+        320
+      ],
+      "id": "50a4c7ca-c087-4fa8-ad6d-f64e787d6760",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WqAbcTBl6ijy3a52",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelName": "models/embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        1920,
+        340
+      ],
+      "id": "e25a4f08-30b8-4823-a43f-b21d11b712cc",
+      "name": "Embeddings Google Gemini1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "WqAbcTBl6ijy3a52",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Default Data Loader": {
+      "ai_document": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "ai_document",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Recursive Character Text Splitter": {
+      "ai_textSplitter": [
+        [
+          {
+            "node": "Default Data Loader",
+            "type": "ai_textSplitter",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Pinecone Vector Store",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Movie Recommendations Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini1": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Movie Recommendations Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "b531b9eb-e8bd-402e-80de-ebf4ab48813a",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "54c7aedbe1ce1c3b29748e13ffccd7b735a5873e5d892d091b5875bc3ecd74f4"
+  },
+  "id": "mbiVN1Lr6zqKJNb5",
+  "tags": [
+    {
+      "createdAt": "2025-06-14T11:32:08.719Z",
+      "updatedAt": "2025-06-14T11:32:08.719Z",
+      "id": "DxSKCAeKPbxkrqyb",
+      "name": "Movie Recommendations"
+    },
+    {
+      "createdAt": "2025-06-14T11:32:08.744Z",
+      "updatedAt": "2025-06-14T11:32:08.744Z",
+      "id": "hDH41nI5FJetzObW",
+      "name": "RAG Application"
+    }
+  ]
+}

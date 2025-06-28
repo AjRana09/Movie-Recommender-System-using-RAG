@@ -1,0 +1,266 @@
+{
+  "name": "Movie Recommendations Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "2c27031f-2662-415f-b5e2-0626bc84eb4c",
+      "name": "When chat message received",
+      "webhookId": "dbe98744-da99-414b-b1a3-6b8f3c668a7b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=read the following input given by the user \"{{ $json.chatInput }}\" and answer to the query\n\n\n\ncontext: the vector store that is connected to you i.e., \"movie_recommendations\" stores data about movie recommendations based on user preferences and genres, so when searching the vector store based on the chatinput \"{{ $json.chatInput }}\" change the query that is given to the vector store to relevant keywords that are related to movies, genres, recommendations, and user preferences specifically for movie suggestions",
+        "options": {
+          "systemMessage": "You are a movie recommendation AI assistant in a RAG application. You help users find movies based on their preferences, genres, and past recommendations. You can suggest movies, explain why certain movies are recommended, and help users discover new films based on their taste."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2,
+      "position": [
+        300,
+        0
+      ],
+      "id": "ff3ae4d8-0388-4258-b81d-e7cb506f38cd",
+      "name": "Movie Recommendation AI Agent"
+    },
+    {
+      "parameters": {
+        "mode": "retrieve-as-tool",
+        "toolName": "movie_recommendations",
+        "toolDescription": "Retrieve relevant movie recommendation documents and provide them to the AI agent for generating personalized movie suggestions",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "movie-recommendations",
+          "mode": "list",
+          "cachedResultName": "movie-recommendations"
+        },
+        "topK": 10,
+        "options": {
+          "pineconeNamespace": "movie_data"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        700,
+        120
+      ],
+      "id": "0a3ff1b0-f485-4f8e-b6ea-ec77a14ec0fd",
+      "name": "Movie Recommendations Vector Store"
+    },
+    {
+      "parameters": {
+        "modelName": "models/gemini-1.5-flash",
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 1000
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        300,
+        300
+      ],
+      "id": "9739cec5-3c17-4179-a98e-48eca74d7f0e",
+      "name": "Google Gemini Chat Model"
+    },
+    {
+      "parameters": {
+        "modelName": "models/embedding-001"
+      },
+      "type": "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        960,
+        320
+      ],
+      "id": "7a96c75f-4160-4259-8457-56d405a48880",
+      "name": "Embeddings Google Gemini"
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "pineconeIndex": {
+          "__rl": true,
+          "value": "movie-recommendations",
+          "mode": "list",
+          "cachedResultName": "movie-recommendations"
+        },
+        "options": {
+          "pineconeNamespace": "movie_data",
+          "clearNamespace": false,
+          "batchSize": 100
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "typeVersion": 1.1,
+      "position": [
+        700,
+        400
+      ],
+      "id": "data-loader-node-id",
+      "name": "Data Loader (Pinecone Upload)"
+    },
+    {
+      "parameters": {
+        "inputText": "={{ $json.movieData }}",
+        "options": {
+          "chunkSize": 500,
+          "chunkOverlap": 50
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textSplitter",
+      "typeVersion": 1,
+      "position": [
+        500,
+        400
+      ],
+      "id": "text-splitter-node-id",
+      "name": "Text Splitter"
+    },
+    {
+      "parameters": {
+        "filePath": "/path/to/movie_recommendations.txt",
+        "options": {
+          "encoding": "utf8"
+        }
+      },
+      "type": "n8n-nodes-base.readBinaryFile",
+      "typeVersion": 1,
+      "position": [
+        300,
+        400
+      ],
+      "id": "file-reader-node-id",
+      "name": "Read Movie Data File"
+    },
+    {
+      "parameters": {
+        "operation": "toText"
+      },
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1,
+      "position": [
+        400,
+        400
+      ],
+      "id": "convert-to-text-node-id",
+      "name": "Convert to Text"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Movie Recommendations Vector Store": {
+      "ai_tool": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Movie Recommendation AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embeddings Google Gemini": {
+      "ai_embedding": [
+        [
+          {
+            "node": "Movie Recommendations Vector Store",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Data Loader (Pinecone Upload)",
+            "type": "ai_embedding",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Movie Data File": {
+      "main": [
+        [
+          {
+            "node": "Convert to Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert to Text": {
+      "main": [
+        [
+          {
+            "node": "Text Splitter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Splitter": {
+      "main": [
+        [
+          {
+            "node": "Data Loader (Pinecone Upload)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "",
+  "meta": {
+    "instanceId": "3221189495212ba9c981e358e3231b0c57cecb18ab812d14a116c65bf085017a"
+  },
+  "tags": [
+    {
+      "id": "movie-recommendations",
+      "name": "Movie Recommendations"
+    },
+    {
+      "id": "rag-application",
+      "name": "RAG Application"
+    }
+  ]
+}
